@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 
 namespace Stopwatch
@@ -6,7 +7,7 @@ namespace Stopwatch
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
             switchStopWach();
 
         }
@@ -18,12 +19,11 @@ namespace Stopwatch
             {
                 Console.Write("Enter b for start, or s for stop, or any other charater to exsit: ");
                 var input = Console.ReadLine();
-
-                if (input == "b")
+           
+                if(input == "b")
                 {
                     stopwatch.Start();
-                }
-                else if (input == "s")
+                } else if(input == "s")
                 {
                     stopwatch.Stop();
                     Console.WriteLine("duration is " + stopwatch.GetDuration());
@@ -32,8 +32,8 @@ namespace Stopwatch
                 {
                     Console.WriteLine("duration is " + stopwatch.GetDuration());
                     break;
-                }
-            }
+                }             
+            }            
         }
     }
 }
